@@ -1,0 +1,63 @@
+Servo control board instructions V1.3
+Features
+ 32-bit ARM core processor chip
+ unique online upgrade mechanism, the user can upgrade the firmware online
+ Automatic baud rate
+ the use of USB and UART communication interfaces
+ 1us control precision (equivalent to 0.09 degrees servo)
+ can simultaneously control 32 synchronous servo (24-channel synchronous servo control board can simultaneously control up to 24, 16 servo control board can simultaneously Synchronization control 16 servos)
+ Built-in 512K memory chip can store hundreds of action group
+ powerful computer software (built-in 3 languages, Simplified Chinese, Traditional Chinese, English)
+ have an Android phone control software (in conjunction with a Bluetooth module)
+
+powered by Servo control board requires two power: servo power and chip power (servo power is relatively large, it is not recommended to share a power supply)
+Servo power source (positive): VS (FIG. 3 position of the right end of the blue terminals)
+
+Power steering (negative): GND (blue in Fig intermediate terminals No. 3 position)
+Servo parameters according to the actual power of the connected servo parameters may be, such as TR213 servo supply voltage is 4.8-7.2V, then the power steering can
+In the power supply voltage between 4.8-7.2V.
+Chip power supply (positive): VSS (FIG. 3 position of the left end of the blue terminals)
+Chip power supply (negative): GND (blue in Fig intermediate terminals No. 3 position)
+VSS requirements are 6.5-12V, if the chip is powered from the input port VSS, then the power supply voltage must be between 6.5-12V.
+Also:
+1. Figure No. 2 position in the USB interface to the chip power supply, so the USB interface port and VSS, you can choose one.
+2. Figure No. 1 position for the chip to be powered marked 5V and GND, 5V is positive, GND is the negative voltage power supply will
+It shall be 5V.
+3. Figures in 1,2,3 position can give the chip power supply, you can choose one. (However, in strict accordance with the scope of their power)
+4. Figure No. 4 position green LED chip supply is normal lights, green lights that chip supply is normal, the green lamp, table
+Chip supply shown abnormalities.
+5. FIG. 5 position the green LED is normal servo power indicator lights green, indicating normal power steering, green lamp, table
+Power steering shown abnormalities.
+If you need to control the steering gear, two green LED lights are lit is a prerequisite.
+install driver
+Driver Download: http://www.torobot.com/down/usc_driver.exe (all lowercase)
+Simply double-click usc_driver.exe, click Next to install the driver.
+Driver installation process if the following prompt appears, select "Install this driver software."
+Driver installation process if the following prompt appears, select "Continue."
+After a successful driver installation, enter the computer's device manager, then you can see the servo control board hardware device, as shown in the mini
+USB servo control is the device name, COM472 is the port number (port number that each computer display are not the same), the use of computer software
+Member steering control when the need to know the port number of the device.
+Connect the servo to servo control board
+The red markers are servo signal wire interface (when connected to the steering gear to pay attention to the direction)
+Not a servo interface The yellow markers
+Even when the attention of the steering gear next to white text markers, such as S1, S2 ... ..S32, on behalf of the servo channel with the computer software is eleven pairs
+Corresponding.
+Download software
+Software Download: http://www.torobot.com/down/rios_usc.exe (all lowercase)
+Controlling a single servo
+Run rios_usc.exe, then select the correct port number (can not pick), then click the button "Open."
+Then use the mouse to drag the slider panel servos (servo connections is the first of several channels, it is necessary to drag the corresponding steering panel, the top panel
+Is the number, as shown in S1)
+(Digital frame panel on the left is the current output of the PWM pulse width, the right frame temporarily without any sense)
+Simultaneous control of multiple servos
+After following the above steps sequentially control multiple servos, then set the time (in the following figure, the set is 1000ms, on behalf of servo rotation
+Transfer speed, range must be between 100-9999, the greater the value the slower), then click on the bottom of the software the "Add" button, then the software
+Below will generate a command, which commands can simultaneously control all front steering control (if control of the front steering gear 10, then
+Which commands can simultaneously control the 10 servos).
+After modification, you can continue to "add" several times, each "Add" once the action on behalf of a robot.
+Download Action Group
+Follow the steps above, the production of a few or dozens of command after the software by clicking on the right side of the "Run" button to test life
+Order effect.
+If the results are no problem, you can click the right side of the software "download" button to download the action group.
+After a successful download, the software will prompt "download is complete! No. = 1", prompt action figure is the group number.
+After only need to perform this action group, you can perform all the commands of the action following the group.
